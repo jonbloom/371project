@@ -29,9 +29,7 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
       <![endif]-->
     </head>
-
     <body>
-
      <div class="container">
       <div class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
@@ -66,48 +64,49 @@
  <script src="https://code.jquery.com/jquery.min.js"></script>
  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
  <script type="text/javascript">
- $(document).ready(function(){
-  loadClips();
- });
- function validate(){
-  var clipping = $("#clipping").val();
-  if (!clipping){
-    alert("You must enter some text to store.");
-  } else {
-    processData();
-  }
- }
+function loadClips(){
+$("#clips").load("get.php");
+}
+$(document).ready(function(){
+loadClips();
+});
+function validate(){
+var clipping = $("#clipping").val();
+if (!clipping){
+alert("You must enter some text to store.");
+} else {
+processData();
+}
+}
 
- function del(clip){
-  var id = $(clip).data('id');
-  $.ajax({
-    type: "POST",
-    url: "delete.php",
-    data: { id: id }
-  })
-  .done(function(  ) {
-    $("#clips").load("get.php");
-    $("#clipping").val("");
-    loadClips();
-  });
- }
+function del(clip){
+var id = $(clip).data('id');
+$.ajax({
+type: "POST",
+url: "delete.php",
+data: { id: id }
+})
+.done(function(  ) {
+$("#clips").load("get.php");
+$("#clipping").val("");
+loadClips();
+});
+}
 
- function loadClips(){
-  $("#clips").load("get.php");
- }
 
- $('button').on('click',validate);
- function processData(){
-  var clipping = $("#clipping").val();
-  $.ajax({
-    type: "POST",
-    url: "action.php",
-    data: { clipping: clipping }
-  })
-  .done(function() {
-    $("#clipping").val("");
-    loadClips();
-  });
+
+$('button').on('click',validate);
+function processData(){
+var clipping = $("#clipping").val();
+$.ajax({
+type: "POST",
+url: "action.php",
+data: { clipping: clipping }
+})
+.done(function() {
+$("#clipping").val("");
+loadClips();
+});
 }
 </script>
 </body>
