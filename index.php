@@ -104,7 +104,7 @@
     url: "action.php",
     data: { clipping: clipping }
   })
-  .done(function() {}
+  .done(function() {
     $("#clipping").val("");
     loadClips();
   });
