@@ -15,7 +15,7 @@ while($row = mysqli_fetch_array($result)) {
   $str .="\t\t\t</div>\n";
   $str .="\t\t\t<div class='panel-footer'>\n";
   $str .="\t\t\t\t<div align='right'>\n";
-  $str .="\t\t\t\t\t<a data-id='" . $row['id'] . "'><i class='fa fa-times'></i></a>\n";
+  $str .="\t\t\t\t\t<a data-id='" . $row['id'] . "' onclick='del(this)'><i class='fa fa-times'></i></a>\n";
   $str .="\t\t\t\t</div>\n";
   $str .="\t\t\t</div>\n";
   $str .="\t\t</div>\n";
