@@ -78,7 +78,7 @@
   }
  }
 
- function delete(clip){
+ function del(clip){
   var id = $(clip).data('id');
   $.ajax({
     type: "POST",
