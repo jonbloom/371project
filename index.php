@@ -69,10 +69,34 @@
  $(document).ready(function(){
   loadClips();
  });
+ function validate(){
+  var clipping = $("#clipping").val();
+  if (!clipping){
+    alert("You must enter some text to store.");
+  } else {
+    processData();
+  }
+ }
+
+ function delete(clip){
+  var id = $(clip).data('id');
+  $.ajax({
+    type: "POST",
+    url: "delete.php",
+    data: { id: id }
+  })
+  .done(function(  ) {
+    $("#clips").load("get.php");
+    $("#clipping").val("");
+    loadClips();
+  });
+ }
+
  function loadClips(){
   $("#clips").load("get.php");
  }
- $('button').on('click',processData);
+
+ $('button').on('click',validate);
  function processData(){
   var clipping = $("#clipping").val();
   $.ajax({
@@ -80,8 +104,8 @@
     url: "action.php",
     data: { clipping: clipping }
   })
-  .done(function(  ) {
-    $("#clips").load("get.php");
+  .done(function() {}
+    $("#clipping").val("");
     loadClips();
   });
 }
