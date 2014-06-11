@@ -61,7 +61,11 @@
        <button type="submit" class="btn btn-default">Submit</button>
      </form>
   </div>
+<<<<<<< HEAD
   <?php include 'get.php'; ?>
+=======
+  <? php //include('get.php'); ?>
+>>>>>>> 1f154d366da033cc3c57851c1f5a1d0883b1dd37
 </div><!-- /.container -->
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
