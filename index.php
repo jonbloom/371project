@@ -87,7 +87,6 @@ url: "delete.php",
 data: { id: id }
 })
 .done(function(  ) {
-$("#clips").load("get.php");
 $("#clipping").val("");
 loadClips();
 });
