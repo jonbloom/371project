@@ -53,7 +53,7 @@
       </div>
       <div class="jumbotron">
        <h1>Create New Clipping</h1>
-       <form role="form" action="action.php" method="POST">
+       <form role="form">
         <div class="form-group">
          <label for="clipping">Enter your text:</label>
          <textarea class="form-control" size="5" id="clipping" name="clipping" placeholder="Loren Ipsum"></textarea>
@@ -66,6 +66,13 @@
  <script src="https://code.jquery.com/jquery.min.js"></script>
  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
  <script type="text/javascript">
+ $(document).ready(function(){
+  loadClips();
+ });
+ function loadClips(){
+  $("#clips").load("get.php");
+ }
+ $('button').on('click',processData);
  function processData(){
   var clipping = $("#clipping").val();
   $.ajax({
@@ -75,9 +82,8 @@
   })
   .done(function(  ) {
     $("#clips").load("get.php");
-    $("#clipping").val("");
+    loadClips();
   });
-
 }
 </script>
 </body>
