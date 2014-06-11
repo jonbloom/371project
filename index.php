@@ -46,26 +46,31 @@
           </div>
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
+              <li class="active"><a href="/">Home</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </div>
       <div class="jumbotron">
        <h1>Create New Clipping</h1>
-       <form role="form" action="/" method="POST">
+       <form role="form" action="action.php" method="POST">
         <div class="form-group">
          <label for="clipping">Enter your text:</label>
-         <textarea class="form-control" size="5" id="clipping" name="clipping" placeholder="Loren Ipsum">
+         <textarea class="form-control" size="5" id="clipping" name="clipping" placeholder="Loren Ipsum"></textarea>
        </div>
        <button type="submit" class="btn btn-default">Submit</button>
      </form>
   </div>
-
+  <? php include('get.php'); ?>
 </div><!-- /.container -->
-
-
     <script src="https://code.jquery.com/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    function processData(){
+        var clipping = $("#clipping").val();
+
+    }
+    $('form').submit(processData);
+    </script>
   </body>
   </html>
