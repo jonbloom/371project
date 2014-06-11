@@ -10,7 +10,7 @@
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->
   <style type="text/css">
   body {
@@ -61,7 +61,7 @@
        <button type="submit" class="btn btn-default">Submit</button>
      </form>
   </div>
-  <? php include('get.php'); ?>
+  <?php include 'get.php'; ?>
 </div><!-- /.container -->
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
